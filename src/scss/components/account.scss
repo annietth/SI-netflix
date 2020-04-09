@@ -1,0 +1,22 @@
+.profil {
+  display: flex;
+  justify-content: space-around;
+
+  &__left {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 1%;
+
+    &__items {
+      display: flex;
+      margin-right: 250px;
+    }
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    & > img {
+      margin: 0 8px;
+    }
+  }
+}
