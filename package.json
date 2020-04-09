@@ -34,5 +34,8 @@
   "lint-staged": {
     "*.{js,json,html,scss}": "npm run prettier"
   },
-  "dependencies": {}
+  "dependencies": {
+    "i": "^0.3.6",
+    "imdb-api": "^4.0.3"
+  }
 }
