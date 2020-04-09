@@ -1,20 +1,32 @@
 import ar from '../assets/ba-test/message.json';
-const imdb = require('imdb-api')
-console.log(ar);
 
-let randomNumber = Math.floor((Math.random() * ar.list.length - 1) + 1);
+var films = [];
+for (let i = 0; i < ar.list.length; i++) {
+  var film = ar.list[i].substring(0, ar.list[i].indexOf(' -'));
+  films.push(film);
+}
 
-let randomMovie = ar.list[randomNumber];
-console.log(randomMovie);
+let randomNumber = Math.floor((Math.random() * films.length - 1) + 1);
 
-
+let randomMovie = films[randomNumber];
 
 function apiCall() {
-  //imdb.get({name: randomMovie}, {apikey: 'b854e1ce', timeout: 30000}).then(console.log).catch(console.log);
-  $.getJSON('http://www.omdbapi.com/?apikey=b854e1ce&i=' + encodeURI(randomMovie)).then(function(response))
+  $.getJSON('http://www.omdbapi.com/?apikey=b854e1ce&s=' + encodeURI(randomMovie)).then(function(response){})
 }
-  apiCall();
+apiCall();
+  
+
 let list = document.getElementsByClassName("slider__item")[0];
+
+
+
+/*films.map(film => (
+<div>{film}<div>
+)*/
+
+
+//const imdb = require('imdb-api')
+//imdb.get({name: randomMovie}, {apikey: 'b854e1ce', timeout: 30000}).then(console.log).catch(console.log);
 
 //list.push(apiCall());
 
